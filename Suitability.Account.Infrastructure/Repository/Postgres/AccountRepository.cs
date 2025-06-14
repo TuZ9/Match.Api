@@ -16,9 +16,8 @@ namespace Suitability.Account.Infrastructure.Repository.Postgres
         {
             try
             {
-                var query = @"DELETE FROM public.Flower AS tgt
-                              USING SOURCE_TABLE AS src
-                              WHERE tgt.id_flower=src.id_flower;";
+                var query = @"DELETE FROM public.tb_account AS ta
+                              WHERE ta.id_account = @IdAccount;";
                 await DeleteAsync(query);
             }
             catch (Exception ex)
@@ -28,13 +27,20 @@ namespace Suitability.Account.Infrastructure.Repository.Postgres
             }
         }
 
-        public async Task<IEnumerable<Domain.Entities.Account>> Get()
+        public async Task<IEnumerable<Domain.Entities.Account>> GetById()
         {
             try
             {
-                var query = @"INSERT INTO public.Flower
-                              (name, type, description, qr, url, image, labtest, thc, cbd, createdat, updatedat, id_brand, id_strain, id_flower)
-                              VALUES('', '', '', '', '', '', false, false, false, '', '', ?, ?, ?);";
+                var query = @"SELECT client_name AS ClientName,
+                                           cpf AS CPF,
+                                           rg AS RG,
+                                           date_birth AS DateOfBirth,
+                                           address AS Address,
+                                           phone AS Phone,
+                                           email AS Email,
+                                           accountnumber AS AccountNumber
+                                    FROM Account
+                                    WHERE id_account = @IdAccount";
 
                 return await GetListAsync(query);
             }
@@ -49,9 +55,8 @@ namespace Suitability.Account.Infrastructure.Repository.Postgres
         {
             try
             {
-                var query = @"INSERT INTO public.Flower
-                              (name, type, description, qr, url, image, labtest, thc, cbd, createdat, updatedat, id_brand, id_strain, id_flower)
-                              VALUES('', '', '', '', '', '', false, false, false, '', '', ?, ?, ?);";
+                var query = @"INSERT INTO Account (client_name, cpf, rg, date_birth, address, phone, email, accountnumber)
+                                     VALUES (@ClientName, @CPF, @RG, @DateOfBirth, @Address, @Phone, @Email, @AccountNumber)";
 
                 await InsertAsync(query, account);
             }
@@ -66,11 +71,16 @@ namespace Suitability.Account.Infrastructure.Repository.Postgres
         {
             try
             {
-                var query = @"UPDATE public.Flower
-                              SET 
-                              name='', type='', description='', qr='', url='', image='', labtest=false, 
-                              thc=false, cbd=false, createdat='', updatedat='', id_brand=?, id_strain=?
-                              WHERE id_flower=?;";
+                string query = @"UPDATE Account
+                                       SET client_name = @ClientName,
+                                           CPF = @CPF,
+                                           rg = @RG,
+                                           date_birth = @DateOfBirth,
+                                           address = @Address,
+                                           phone = @Phone,
+                                           email = @Email,
+                                           accountnumber = @AccountNumber
+                                       WHERE id_account = @IdAccount";
 
                 await UpdateAsync(query, account);
             }
