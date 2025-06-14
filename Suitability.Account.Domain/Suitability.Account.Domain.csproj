@@ -10,7 +10,10 @@
   <ItemGroup>
     <Folder Include="Dto\" />
     <Folder Include="Entities\" />
-    <Folder Include="Static\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
   </ItemGroup>
 
 </Project>
