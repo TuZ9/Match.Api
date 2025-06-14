@@ -23,7 +23,6 @@
                 _accountNumber = value.Trim();
             }
         }
-        public Account() { }
 
         public Account(Guid idAccount, string clientName, string cpf, string rg, DateTime dateOfBirth, string address, string phone, string email, string accountNumber)
         {

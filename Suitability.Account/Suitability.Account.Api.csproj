@@ -23,8 +23,4 @@
     <ProjectReference Include="..\Suitability.Account.Infrastructure\Suitability.Account.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
