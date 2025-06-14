@@ -33,4 +33,10 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Suitability.Account.Application\Suitability.Account.Application.csproj" />
+    <ProjectReference Include="..\Suitability.Account.Domain\Suitability.Account.Domain.csproj" />
+    <ProjectReference Include="..\Suitability.Account.Infrastructure\Suitability.Account.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
