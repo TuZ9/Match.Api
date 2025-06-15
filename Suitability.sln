@@ -11,6 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Suitability.Infrastructure"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Suitability.Domain", "Suitability.Domain\Suitability.Domain.csproj", "{675D2E46-6A40-44FB-AEF3-3270A8BBA2DC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "devops", "devops", "{99D98453-FA6D-44C1-897D-0E7C8A564D62}"
+	ProjectSection(SolutionItems) = preProject
+		Devops\Scripts\AccountScript.sql = Devops\Scripts\AccountScript.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +43,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{87148F4A-67D1-44E5-945C-97D84E9C5517} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{0CA18D01-90A5-4AD8-A1C4-417CB6E01344} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{24A34167-C45A-43CF-AA4C-D716EF5C3034} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{675D2E46-6A40-44FB-AEF3-3270A8BBA2DC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F3E051A4-4E0D-45AA-99EE-9D794469B45A}

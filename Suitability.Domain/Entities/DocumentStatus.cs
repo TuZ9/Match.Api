@@ -1,7 +1,7 @@
 ﻿
 namespace Suitability.Domain.Entities
 {
-    internal class DocumentStatus
+    public class DocumentStatus
     {
     }
 }

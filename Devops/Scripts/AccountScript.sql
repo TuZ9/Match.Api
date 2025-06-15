@@ -10,6 +10,19 @@ CREATE TABLE tb_account (
     email VARCHAR(255)    
 );
 
+CREATE TABLE tb_document_type (
+    id_document_type UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    document_type_description TEXT NOT NULL
+);
+
+INSERT INTO tb_document_type (id_document_type, document_type_description)
+VALUES 
+    (gen_random_uuid(), 'PRP'),
+    (gen_random_uuid(), 'TAR'),
+    (gen_random_uuid(), 'Others');
+
+
+
 CREATE TABLE tb_profile_risk (
     id_profile_risk UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     profile_description TEXT NOT NULL,

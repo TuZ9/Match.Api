@@ -8,30 +8,23 @@ namespace Suitability.Api.Controllers
     [EnableCors("All")]
     public class DocumentController : ControllerBase
     {
-        private readonly IDocumentService _accService;
-        public DocumentController(IDocumentService accService)
+        private readonly IDocumentService _docService;
+        public DocumentController(IDocumentService docService)
         {
-            _accService = accService;
-        }
-
-        [Route("health")]
-        [HttpGet]
-        public async Task<IActionResult> GetHealth()
-        {            
-            return Ok(new[] {"Document Service Health Sucess"});
+            _docService = docService;
         }
 
         [HttpGet("GetDocument")]
         public async Task<IActionResult> GetSteamIdByName(string Document_number)
         {
-            var user = await _accService.GetById(Document_number);
+            var user = await _docService.GetById(Document_number);
             return Ok(user);
         }
 
         [HttpPost("InsertDocument")]
         public async Task<IActionResult> InsertUser(Domain.Entities.Document user)
         {
-            await _accService.Insert(user);
+            await _docService.Insert(user);
 
             return Ok(user);
         }
