@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Suitability.Account.Application.Services;
-using Suitability.Account.Domain.Interfaces.Repository;
-using Suitability.Account.Domain.Interfaces.Service;
-using Suitability.Account.Infrastructure.Context;
-using Suitability.Account.Infrastructure.Repository.Postgres;
+using Suitability.Application.Services;
+using Suitability.Domain.Interfaces.Repository;
+using Suitability.Domain.Interfaces.Service;
+using Suitability.Infrastructure.Context;
+using Suitability.Infrastructure.Repository.Postgres;
 
-namespace Suitability.Account.Infrastructure.Extensions
+namespace Suitability.Infrastructure.Extensions
 {
     public static class ServiceExtensions
     {

@@ -1,8 +1,8 @@
 ﻿using Npgsql;
-using Suitability.Account.Application.Static;
+using Suitability.Application.Static;
 using System.Data;
 
-namespace Suitability.Account.Infrastructure.Context
+namespace Suitability.Infrastructure.Context
 {
     public class AuroraDbReadContext : IDisposable
     {

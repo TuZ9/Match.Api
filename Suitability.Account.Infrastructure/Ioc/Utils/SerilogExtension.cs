@@ -3,7 +3,7 @@ using Serilog;
 using Serilog.Events;
 using Serilog.Filters;
 
-namespace Suitability.Account.Infrastructure.Ioc.Utils
+namespace Suitability.Infrastructure.Ioc.Utils
 {
     public class SerilogExtension
     {

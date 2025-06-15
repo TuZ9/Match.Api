@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Diagnostics;
 
-namespace Suitability.Account.Application.Static
+namespace Suitability.Application.Static
 {
     public static class RunTimeConfig
     {

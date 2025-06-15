@@ -1,8 +1,8 @@
 ﻿using Dapper;
-using Suitability.Account.Domain.Interfaces.Repository;
-using Suitability.Account.Infrastructure.Context;
+using Suitability.Domain.Interfaces.Repository;
+using Suitability.Infrastructure.Context;
 
-namespace Suitability.Account.Infrastructure.Repository.Postgres
+namespace Suitability.Infrastructure.Repository.Postgres
 {
     public class AuroraRepository<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
     {

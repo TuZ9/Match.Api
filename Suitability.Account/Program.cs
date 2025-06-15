@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using Suitability.Account.Application.Static;
-using Suitability.Account.Infrastructure.Extensions;
-using Suitability.Account.Infrastructure.Ioc.Utils;
+using Suitability.Application.Static;
+using Suitability.Infrastructure.Extensions;
+using Suitability.Infrastructure.Ioc.Utils;
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +10,6 @@ SwaggerConfiguration.AddSwagger(builder.Services);
 builder.Services.AddControllers();
 builder.Services.AddServices();
 RunTimeConfig.SetConfigs(builder.Configuration);
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();

@@ -1,4 +1,4 @@
-﻿namespace Suitability.Account.Domain.Interfaces.Service
+﻿namespace Suitability.Domain.Interfaces.Service
 {
     public interface IAccountService
     {

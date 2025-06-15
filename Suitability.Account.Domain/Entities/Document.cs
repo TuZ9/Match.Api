@@ -1,8 +1,8 @@
 ﻿namespace Suitability.Domain.Entities
 {
-    public class Account
+    public class Document
     {
-        public Guid IdAccount { get; set; }
+        public Guid IdDocument { get; set; }
         public required string ClientName { get; set; }
         public required string CPF { get; set; }
         public required string RG { get; set; }
@@ -10,17 +10,17 @@
         public string? Address { get; set; }
         public string? Phone { get; set; }
         public required string Email { get; set; }
-        private string _accountNumber;
-        public required string AccountNumber
+        private string _DocumentNumber;
+        public required string DocumentNumber
         {
-            get => _accountNumber;
+            get => _DocumentNumber;
             set
             {
                 if (string.IsNullOrWhiteSpace(value) || value.Trim().Length != 9 || !long.TryParse(value.Trim(), out _))
                 {
-                    throw new ArgumentException("Account number must be exactly 9 digits.");
+                    throw new ArgumentException("Document number must be exactly 9 digits.");
                 }
-                _accountNumber = value.Trim();
+                _DocumentNumber = value.Trim();
             }
         }
     }

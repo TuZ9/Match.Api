@@ -1,17 +1,24 @@
 ﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Suitability.Account.Domain.Interfaces.Service;
+using Suitability.Domain.Interfaces.Service;
 
-namespace Suitability.Account.Api.Controllers
+namespace Suitability.Api.Controllers
 {
     [ApiController]
     [EnableCors("All")]
-    public class UserController : ControllerBase
+    public class AccountController : ControllerBase
     {
         private readonly IAccountService _accService;
-        public UserController(IAccountService accService) 
+        public AccountController(IAccountService accService)
         {
             _accService = accService;
+        }
+
+        [Route("health")]
+        [HttpGet]
+        public async Task<IActionResult> GetHealth()
+        {            
+            return Ok(new[] {"Account Service Health Sucess"});
         }
 
         [HttpGet("GetAccount")]

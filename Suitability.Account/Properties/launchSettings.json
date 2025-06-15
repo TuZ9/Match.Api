@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "Suitability.Account": {
+    "Suitability": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

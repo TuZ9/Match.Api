@@ -1,4 +1,4 @@
-﻿namespace Suitability.Account.Domain.Interfaces.Repository
+﻿namespace Suitability.Domain.Interfaces.Repository
 {
     public interface IRepositoryBase<TEntity> where TEntity : class
     {

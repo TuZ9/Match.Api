@@ -4,22 +4,22 @@ using Suitability.Domain.Interfaces.Service;
 
 namespace Suitability.Application.Services
 {
-    public class AccountService : IAccountService
+    public class DocumentService : IDocumentService
     {
-        private readonly ILogger<AccountService> _logger;
-        private readonly IAccountRepository _accountRepository;
+        private readonly ILogger<DocumentService> _logger;
+        private readonly IDocumentRepository _DocumentRepository;
 
-        public AccountService(ILogger<AccountService> logger, IAccountRepository accountRepository) 
+        public DocumentService(ILogger<DocumentService> logger, IDocumentRepository DocumentRepository)
         {
             _logger = logger;
-            _accountRepository = accountRepository;
+            _DocumentRepository = DocumentRepository;
         }
 
         public async Task Delete(string idUser)
         {
             try
             {
-                await _accountRepository.Delete(idUser);
+                await _DocumentRepository.Delete(idUser);
             }
             catch (Exception ex)
             {
@@ -28,11 +28,11 @@ namespace Suitability.Application.Services
             }
         }
 
-        public async Task<Domain.Entities.Account> GetSingleById(string account_number)
+        public async Task<Domain.Entities.Document> GetSingleById(string Document_number)
         {
             try
             {
-                return await _accountRepository.GetSingleById(account_number);
+                return await _DocumentRepository.GetSingleById(Document_number);
             }
             catch (Exception ex)
             {
@@ -41,11 +41,11 @@ namespace Suitability.Application.Services
             }
         }
 
-        public async Task<IEnumerable<Domain.Entities.Account>> GetById(string idAccount)
+        public async Task<IEnumerable<Domain.Entities.Document>> GetById(string idDocument)
         {
             try
             {
-                return await _accountRepository.GetById(idAccount);
+                return await _DocumentRepository.GetById(idDocument);
             }
             catch (Exception ex)
             {
@@ -54,11 +54,11 @@ namespace Suitability.Application.Services
             }
         }
 
-        public async Task BulkInsert(IEnumerable<Domain.Entities.Account> account)
+        public async Task BulkInsert(IEnumerable<Domain.Entities.Document> Document)
         {
             try
             {
-                await _accountRepository.BulkInsert(account);
+                await _DocumentRepository.BulkInsert(Document);
             }
             catch (Exception ex)
             {
@@ -67,11 +67,11 @@ namespace Suitability.Application.Services
             }
         }
 
-        public async Task Update(Domain.Entities.Account account)
+        public async Task Update(Domain.Entities.Document Document)
         {
             try
             {
-                await _accountRepository.Update(account);
+                await _DocumentRepository.Update(Document);
             }
             catch (Exception ex)
             {
@@ -80,11 +80,11 @@ namespace Suitability.Application.Services
             }
         }
 
-        public async Task Insert(Domain.Entities.Account account)
+        public async Task Insert(Domain.Entities.Document Document)
         {
             try
             {
-                await _accountRepository.Insert(account);
+                await _DocumentRepository.Insert(Document);
             }
             catch (Exception ex)
             {

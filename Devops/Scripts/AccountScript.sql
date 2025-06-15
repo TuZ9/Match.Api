@@ -10,6 +10,21 @@ CREATE TABLE tb_account (
     email VARCHAR(255)    
 );
 
+CREATE TABLE tb_profile_risk (
+    id_profile_risk UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    profile_description TEXT NOT NULL,
+    risk_value NUMERIC NOT NULL,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+INSERT INTO tb_profile_risk (profile_description, risk_value, is_active)
+VALUES 
+    ('Conservador', 1, TRUE),
+    ('Moderada', 2, TRUE),
+    ('Risco Não Cadastrado', 0, TRUE),
+    ('Sofisticado', 5, TRUE);
+
+
 -- Inserir alguns registros na tabela Client
 INSERT INTO tb_account (client_name, cpf, rg, date_birth, address, phone, email, accountNumber)
 VALUES 
