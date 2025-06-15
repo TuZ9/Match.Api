@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Suitability.Account.Application\Suitability.Application.csproj" />
-    <ProjectReference Include="..\Suitability.Account.Domain\Suitability.Domain.csproj" />
-    <ProjectReference Include="..\Suitability.Account.Infrastructure\Suitability.Infrastructure.csproj" />
+    <ProjectReference Include="..\Suitability.Application\Suitability.Application.csproj" />
+    <ProjectReference Include="..\Suitability.Domain\Suitability.Domain.csproj" />
+    <ProjectReference Include="..\Suitability.Infrastructure\Suitability.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
