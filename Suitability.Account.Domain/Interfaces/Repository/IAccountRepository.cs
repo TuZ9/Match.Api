@@ -2,9 +2,11 @@
 {
     public interface IAccountRepository
     {
-        Task<IEnumerable<Domain.Entities.Account>> GetById();
-        Task Insert(IEnumerable<Entities.Account> flower);
-        Task Update(IEnumerable<Entities.Account> flower);
-        Task Delete(Entities.Account flower);
+        Task<Entities.Account> GetSingleById(string idAccount);
+        Task<IEnumerable<Entities.Account>> GetById(string idAccount);
+        Task Insert(Entities.Account account);
+        Task BulkInsert(IEnumerable<Entities.Account> account);
+        Task Update(Entities.Account account);
+        Task Delete(string idAccount);
     }
 }

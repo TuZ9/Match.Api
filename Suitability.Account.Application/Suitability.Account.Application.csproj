@@ -9,10 +9,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
   </ItemGroup>
-  
+
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\Suitability.Account.Domain\Suitability.Account.Domain.csproj" />
   </ItemGroup>
 
 </Project>

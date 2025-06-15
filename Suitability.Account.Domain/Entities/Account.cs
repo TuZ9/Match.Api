@@ -3,15 +3,15 @@
     public class Account
     {
         public Guid IdAccount { get; set; }
-        public string ClientName { get; set; }
-        public string CPF { get; set; }
-        public string RG { get; set; }
+        public required string ClientName { get; set; }
+        public required string CPF { get; set; }
+        public required string RG { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public string Address { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
+        public string? Address { get; set; }
+        public string? Phone { get; set; }
+        public required string Email { get; set; }
         private string _accountNumber;
-        public string AccountNumber
+        public required string AccountNumber
         {
             get => _accountNumber;
             set
@@ -22,19 +22,6 @@
                 }
                 _accountNumber = value.Trim();
             }
-        }
-
-        public Account(Guid idAccount, string clientName, string cpf, string rg, DateTime dateOfBirth, string address, string phone, string email, string accountNumber)
-        {
-            IdAccount = idAccount;
-            ClientName = clientName;
-            CPF = cpf;
-            RG = rg;
-            DateOfBirth = dateOfBirth;
-            Address = address;
-            Phone = phone;
-            Email = email;
-            AccountNumber = accountNumber;
         }
     }
 }
