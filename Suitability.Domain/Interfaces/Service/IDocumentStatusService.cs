@@ -1,6 +1,6 @@
 ﻿namespace Suitability.Domain.Interfaces.Service
 {
-    public interface IDocumentService
+    public interface IDocumentStatusService
     {
         Task BulkInsert(IEnumerable<Entities.Document> document);
         Task Insert(Entities.Document document);

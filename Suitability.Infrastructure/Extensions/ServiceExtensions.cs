@@ -19,7 +19,8 @@ namespace Suitability.Infrastructure.Extensions
         private static IServiceCollection RegisterServices(this IServiceCollection services)
         {
             return services
-                .AddScoped<IAccountService, AccountService>();
+                .AddScoped<IAccountService, AccountService>()
+                .AddScoped<IDocumentService, DocumentService>();
         }
 
         private static IServiceCollection RegisterRepositories(this IServiceCollection services)
@@ -27,7 +28,8 @@ namespace Suitability.Infrastructure.Extensions
             return services
                 .AddSingleton(_ => new AuroraDbReadContext())
                 .AddSingleton(_ => new AuroraDbWriteContext())
-                .AddScoped<IAccountRepository, AccountRepository>();
+                .AddScoped<IAccountRepository, AccountRepository>()
+                .AddScoped<IDocumentRepository, DocumentRepository>();
         }
     }
 }

@@ -4,12 +4,12 @@ using Suitability.Domain.Interfaces.Service;
 
 namespace Suitability.Application.Services
 {
-    public class DocumentService : IDocumentService
+    public class DocumentStatusService : IDocumentStatusService
     {
         private readonly ILogger<DocumentService> _logger;
         private readonly IDocumentRepository _DocumentRepository;
 
-        public DocumentService(ILogger<DocumentService> logger, IDocumentRepository DocumentRepository)
+        public DocumentStatusService(ILogger<DocumentService> logger, IDocumentRepository DocumentRepository)
         {
             _logger = logger;
             _DocumentRepository = DocumentRepository;
