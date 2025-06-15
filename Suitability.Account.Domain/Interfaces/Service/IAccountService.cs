@@ -2,6 +2,7 @@
 {
     public interface IAccountService
     {
+        Task<Entities.Account> GetSingleById(string idAccount);
         Task BulkInsert(IEnumerable<Entities.Account> account);
         Task Insert(Entities.Account user);
         Task Delete(string idUser);

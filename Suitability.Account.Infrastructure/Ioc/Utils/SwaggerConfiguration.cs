@@ -10,7 +10,7 @@ namespace Suitability.Account.Infrastructure.Ioc.Utils
             _collection.AddSwaggerGen(options =>
             {
 
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "BobMarley", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Suitability.Account", Version = "v1" });
                 options.ResolveConflictingActions(d => d.First());
 
             });

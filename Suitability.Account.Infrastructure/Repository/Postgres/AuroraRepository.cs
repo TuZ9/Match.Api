@@ -30,19 +30,33 @@ namespace Suitability.Account.Infrastructure.Repository.Postgres
 
         public async Task<TEntity> GetAsync(string query, object? param = null)
         {
-            using (var con = _contextRead.CreateConnection())
+            try
             {
-                var result = await con.QueryAsync<TEntity>(query, param);
-                return result.FirstOrDefault();
+                using (var con = _contextRead.CreateConnection())
+                {
+                    var result = await con.QueryAsync<TEntity>(query, param);
+                    return result.FirstOrDefault();
+                }
+            }
+            catch
+            {
+                throw;
             }
         }
 
         public async Task<IEnumerable<TEntity>> GetListAsync(string query, object? param = null)
         {
-            using (var con = _contextRead.CreateConnection())
+            try
             {
-                var result = await con.QueryAsync<TEntity>(query, param);
-                return result;
+                using (var con = _contextRead.CreateConnection())
+                {
+                    var result = await con.QueryAsync<TEntity>(query, param);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
             }
         }
 

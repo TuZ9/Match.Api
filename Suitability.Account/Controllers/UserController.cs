@@ -14,6 +14,13 @@ namespace Suitability.Account.Api.Controllers
             _accService = accService;
         }
 
+        [HttpGet("GetAccount")]
+        public async Task<IActionResult> GetSteamIdByName(string account_number)
+        {
+            var user = await _accService.GetSingleById(account_number);
+            return Ok(user);
+        }
+
         [HttpPost("InsertAccount")]
         public async Task<IActionResult> InsertUser(Domain.Entities.Account user)
         {

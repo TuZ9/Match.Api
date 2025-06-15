@@ -28,6 +28,19 @@ namespace Suitability.Account.Application.Services
             }
         }
 
+        public async Task<Domain.Entities.Account> GetSingleById(string account_number)
+        {
+            try
+            {
+                return await _accountRepository.GetSingleById(account_number);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error Message {0}", ex.Message);
+                throw;
+            }
+        }
+
         public async Task<IEnumerable<Domain.Entities.Account>> GetById(string idAccount)
         {
             try

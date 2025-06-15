@@ -17,7 +17,7 @@ namespace Suitability.Account.Infrastructure.Repository.Postgres
             try
             {
                 var query = @"DELETE FROM public.tb_account AS ta
-                              WHERE ta.id_account = @IdAccount;";
+                              WHERE ta.id_account = @idAccount;";
                 await DeleteAsync(query, idAccount);
             }
             catch (Exception ex)
@@ -27,11 +27,12 @@ namespace Suitability.Account.Infrastructure.Repository.Postgres
             }
         }
 
-        public async Task<Domain.Entities.Account> GetSingleById(string idAccount)
+        public async Task<Domain.Entities.Account> GetSingleById(string account)
         {
             try
             {
-                var query = @"SELECT client_name AS ClientName,
+                var query = $@"SELECT       id_account as IdAccount,
+                                           client_name AS ClientName,
                                            cpf AS CPF,
                                            rg AS RG,
                                            date_birth AS DateOfBirth,
@@ -39,10 +40,10 @@ namespace Suitability.Account.Infrastructure.Repository.Postgres
                                            phone AS Phone,
                                            email AS Email,
                                            accountnumber AS AccountNumber
-                                    FROM Account
-                                    WHERE id_account = @IdAccount";
+                                    FROM tb_account
+                                    WHERE accountnumber = '{account}'";
 
-                return await GetAsync(query, idAccount);
+                return await GetAsync(query);
             }
             catch (Exception ex)
             {
@@ -63,7 +64,7 @@ namespace Suitability.Account.Infrastructure.Repository.Postgres
                                            phone AS Phone,
                                            email AS Email,
                                            accountnumber AS AccountNumber
-                                    FROM Account
+                                    FROM public.tb_account
                                     WHERE id_account = @IdAccount";
 
                 return await GetListAsync(query, idAccount);
@@ -79,7 +80,7 @@ namespace Suitability.Account.Infrastructure.Repository.Postgres
         {
             try
             {
-                var query = @"INSERT INTO Account (client_name, cpf, rg, date_birth, address, phone, email, accountnumber)
+                var query = @"INSERT INTO public.tb_account (client_name, cpf, rg, date_birth, address, phone, email, accountnumber)
                                      VALUES (@ClientName, @CPF, @RG, @DateOfBirth, @Address, @Phone, @Email, @AccountNumber)";
 
                 await InsertAsync(query, account);
