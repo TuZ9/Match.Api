@@ -7,7 +7,7 @@ using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 SwaggerConfiguration.AddSwagger(builder.Services);
-builder.Services.AddControllers();
+SerilogExtension.AddSerilog(builder.Configuration);
 builder.Services.AddServices();
 RunTimeConfig.SetConfigs(builder.Configuration);
 builder.Services.AddEndpointsApiExplorer();
